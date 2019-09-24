@@ -46,5 +46,5 @@ if ($method == 'GET') // check the box state
         supprimer_colis_box($idBox, $idCasier);
         include_once 'modeles/classe_box.php';
         modifier_etatBox_IDBOX($idBox, $idCasier, 'vide');
-    }
+    }/**/
 }
