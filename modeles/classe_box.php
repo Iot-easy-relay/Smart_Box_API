@@ -43,7 +43,7 @@ function supprimer_box_IDBOX($idBox, $idCasier)
 
 //****************************************************************************//
 //get the least recently used box
-function rechercher_LRU_BOX($commune,$idColis)
+function rechercher_LRU_BOX($commune, $idColis)
 {
     //ouvrir la connexion
     $conn = OpenCon();
@@ -82,6 +82,7 @@ function modifier_etatBox_IDBOX($idBox, $idCasier, $etatBox)
     //fermer la connexion
     CloseCon($con);
 }
+
 //****************************************************************************************//
 //modifier les dimensions d'un box
 function modifier_dimensionBox_IDBOX($idBox, $idCasier, $longueurBox, $largeurBox, $hauteurBox)

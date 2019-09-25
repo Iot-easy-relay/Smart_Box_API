@@ -58,20 +58,22 @@ function rechercher_box_colis($idColis)
             return $row;
         }
     } else {
-        echo json_encode(['message' => "BOX NOT FOUND dans la table box_contient colis", 'success' => false]) ;
+        echo json_encode(['message' => "BOX NOT FOUND dans la table box_contient colis", 'success' => false]);
         return null;
     }
     //fermer la connexion
     CloseCon($conn);
 }
-function modifier_box_colis($idActeur, $idBox, $idCasier, $typeOperation){
+
+function modifier_box_colis($idActeur, $idBox, $idCasier, $typeOperation)
+{
     //ouvrir la connexion
     $con = OpenCon();
     $sql = "UPDATE box_contient_colis SET idActeur=$idActeur ,dateOperation=null ,typeOperation = '$typeOperation' WHERE idBox=$idBox and idCasier=$idCasier";
     if ($con->query($sql) === TRUE) {
         echo json_encode(['message' => 'box_contient_colis updated', 'success' => true]);
     } else {
-        echo "erreur dans l'insertion du colis dans le box " . $con->error ;
+        echo "erreur dans l'insertion du colis dans le box " . $con->error;
     }
     //fermer la connexion
     CloseCon($con);
