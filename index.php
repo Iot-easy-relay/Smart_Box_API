@@ -24,4 +24,4 @@ if (in_array($tableName, $tables)) //if the table name exist in our database
     include_once './api/API.php';
 } else {
     echo json_encode(['message' => 'INVALID URL: Table does not exists']);
-}
+}/**/
