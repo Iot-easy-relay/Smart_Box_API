@@ -7,7 +7,7 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, GET, DELETE, PUT');
 $method = $_SERVER['REQUEST_METHOD'];
 $request_uri = $_SERVER['REQUEST_URI']; // get the request URL
-$valideRoots = ['findColis', 'addColis']; // the valide Roots used in the URL
+$valideRoots = ['findColis', 'addColis','removeColis']; // the valide Roots used in the URL
 $url = rtrim($request_uri, '/');
 $url = filter_var($request_uri, FILTER_SANITIZE_URL);
 $url = explode('/', $url); // convert the URL to an array
@@ -22,5 +22,5 @@ if (in_array($Root, $valideRoots)) //if the table name exist in our database
 {
     include_once './api/API.php';
 } else {
-    echo json_encode(['message' => 'INVALID URL: Table does not exists']);
+    echo json_encode(['message' => 'INVALID URL: Root does not exists']);
 }/**/
