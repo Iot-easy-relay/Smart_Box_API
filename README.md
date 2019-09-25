@@ -3,7 +3,7 @@ this is an api to check the state of a box and to add or remove a package(colis)
 
 **************** how to use *********************
 1)-to get the box number of the colis:
-use a GET request with this link: http://localhost/smart_box_api/api/findColis/communeNumber/numeroDeColis
+use a GET request with this link: http://localhost/smart_box_api/api/findColis/NumberDeCommune/numeroDeColis
 and it will affect the colis to the least recently used boxx from that casier.
 
 2)-to add a package(colis) to the box , use a POST request to this link http://localhost/Smart_Box_API/addColis
