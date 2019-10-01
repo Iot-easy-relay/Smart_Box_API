@@ -32,7 +32,7 @@ Message d’erreur en cas d’échec
 `{"Message" : "Aucune box n est disponible"}`
 
 
-**_______________Mise à jour**______________ 
+**______________La mise à jour (depot/retrait physique)**______________ 
 
 **En entrée** : 
 
@@ -52,7 +52,7 @@ Message d’erreur en cas d’échec
     "Message" : "Erreur lors de la mise à jour"
 }`
 
-**_________Etat Casier :**_________
+**_________L'etat Casier :**_________
 
 **En entrée:** 
 
