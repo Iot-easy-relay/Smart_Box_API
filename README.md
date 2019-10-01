@@ -52,7 +52,7 @@ Message d’erreur en cas d’échec
     "Message" : "Erreur lors de la mise à jour"
 }`
 
-**_________L'etat Casier :**_________
+**_________Etat Casier :**_________
 
 **En entrée:** 
 
