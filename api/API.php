@@ -1,10 +1,5 @@
 <?php
-if ($method == 'GET') // check the box state
-{
-
-    preAffectation_colis($commune, $idColis); // affecter le colis a un box
-    get_request($idColis); // donnee le numero de box affecté
-} elseif ($method == 'POST') // add colis to the box
+if ($method == 'POST') // add colis to the box
 {
     if ($_POST != null) // if the body of post request is not null
     {
@@ -19,9 +14,6 @@ if ($method == 'GET') // check the box state
 }
 function post_request($idColis, $idActeur, $typeOperation)
 {
-    $colis_longeur = 0;//from another api
-    $colis_largeur = 0;//from another api
-    $colis_hauteur = 0;//from another api
     include_once 'modeles/classe_box.php';
     include_once 'modeles/classe_box_contient_colis.php';
     $Box = rechercher_box_colis($idColis); // get the casier id and the box id using the idColis
@@ -30,10 +22,7 @@ function post_request($idColis, $idActeur, $typeOperation)
     $etatBoxEnBDD = rechercher_etatBox_IDBOX($idBox, $idCasier); //get the state of the box
     $dimonsionEnBDD = rechercher_dimensionsBox_IDBOX($idBox, $idCasier);// get the box size using the box id and the casier id
     $etat = $etatBoxEnBDD['etatBox'];
-    $longeur = $dimonsionEnBDD['longueurBox'];
-    $largeur = $dimonsionEnBDD['largeurBox'];
-    $hauteur = $dimonsionEnBDD['hauteurBox'];
-    if (($etat != "plein") && ($colis_longeur < $longeur) && ($colis_largeur < $largeur) && ($colis_hauteur < $hauteur)) {
+    if (($etat != "plein")) {
         include_once 'modeles/classe_box_contient_colis.php';
         modifier_box_colis($idActeur, $idBox, $idCasier, $typeOperation); // update the box_contient colis table
         // inserer_box_colis($idActeur, $idBox, $idCasier, $idColis, null, $typeOperation);
